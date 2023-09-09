@@ -20,13 +20,19 @@ import java.util.List;
 @AllArgsConstructor
 public class userEntity {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-@Column(nullable = false,unique = true)
+    
+    @Column(nullable = false,unique = true, length=255)
     private String name;
 
-    private String modile;
+    @Column(nullable= false, length=255)
+    private String email;
+    
+    @Column(nullable=false, length=255)
+    private String password;
+    
     @CreationTimestamp
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date createdOn;
